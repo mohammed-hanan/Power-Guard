@@ -1,0 +1,31 @@
+.metric-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Tighter gap */
+    padding: 1rem 1.2rem;
+    /* Slim padding */
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-title {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.metric-subtitle {
+    color: var(--text-light);
+    font-size: 0.75rem;
+}

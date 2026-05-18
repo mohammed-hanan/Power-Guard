@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PowerGuard</string>
+    <string name="title_activity_main">PowerGuard</string>
+    <string name="package_name">com.powerguard.app</string>
+    <string name="custom_url_scheme">com.powerguard.app</string>
+</resources>

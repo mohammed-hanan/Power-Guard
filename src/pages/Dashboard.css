@@ -1,0 +1,135 @@
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.page-header p {
+    color: var(--text-muted);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.section-header p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Tabs */
+.tabs-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    background-color: var(--color-card-bg);
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Chart Placeholder */
+.chart-placeholder {
+    height: 100%;
+    width: 100%;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: repeating-linear-gradient(45deg,
+            rgba(0, 229, 255, 0.02),
+            rgba(0, 229, 255, 0.02) 10px,
+            transparent 10px,
+            transparent 20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-info {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    z-index: 1;
+    background-color: rgba(11, 12, 16, 0.8);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.alerts-section {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+}

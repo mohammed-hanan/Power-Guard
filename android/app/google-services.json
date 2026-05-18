@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "709804447696",
+    "firebase_url": "https://powerguard-2d4ea-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "powerguard-2d4ea",
+    "storage_bucket": "powerguard-2d4ea.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709804447696:android:81bc34f71dc2cbde814bd5",
+        "android_client_info": {
+          "package_name": "com.powerguard.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH2jh3gts1xg6XP3FSzZAsPXcJphorkAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

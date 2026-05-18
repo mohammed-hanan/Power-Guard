@@ -1,0 +1,179 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-nav {
+    background-color: var(--color-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    padding: env(safe-area-inset-top, 0) 2rem 0 2rem;
+    height: calc(72px + env(safe-area-inset-top, 0));
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    background-color: transparent;
+    color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1);
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/* Mobile Bottom Navigation Bar */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom, 0));
+        background-color: var(--color-surface);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-color);
+        border-radius: 0;
+        z-index: 1000;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .nav-item span {
+        font-size: 0.65rem;
+        /* Smaller text for mobile tabs */
+    }
+
+    .nav-item.active {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        color: var(--color-primary);
+    }
+
+    .nav-item.active svg {
+        filter: drop-shadow(0 0 8px var(--color-primary));
+    }
+
+    /* Keep the top bar for branding but remove its nav elements */
+    .top-nav {
+        height: calc(60px + env(safe-area-inset-top, 0));
+        padding: env(safe-area-inset-top, 0) 1rem 0 1rem;
+    }
+
+    .main-content {
+        /* Add massive padding to the bottom so the last items on a page aren't covered by the new bottom bar */
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+    }
+}
